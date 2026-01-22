@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo quadrati</title>
+</head>
+<body>
+
+<h1>Calcolo di quadrati</h1>
+<p>Inserisci 1 numero di cui vuoi trovare il suo quadrato</p>
+
+<input type="number" id="n1">
+<button onclick="calcolaQuadrato()">Calcola il quadrato</button>
+
+<p id="risultato"></p>
+
+<script>
+function quadrato(n1) {
+    return n1 * n1;
+}
+
+function calcolaQuadrato() {
+    let num1 = parseFloat(document.getElementById("n1").value);
+    let q1 = quadrato(num1);
+
+    document.getElementById("risultato").innerHTML =
+      "Il quadrato di " + num1 + " è " + q1;
+}
+</script>
+
+</body>
+</html>
