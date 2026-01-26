@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saluto</title>
+</head>
+<body>
+
+    <h1>Controllo saluto</h1>
+
+    <input type="text" id="saluto" placeholder="Scrivi un saluto">
+    <br><br>
+    <button onclick="controllaSaluto()">Controlla</button>
+
+    <script>
+        function controllaSaluto() {
+            var parola = document.getElementById("saluto").value;
+
+            if (parola == "ciao") {
+                alert("saluto riconosciuto");
+            } else {
+                alert("parola diversa");
+            }
+        }
+    </script>
+
+</body>
+</html>
