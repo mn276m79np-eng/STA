@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dislivello Trekking</title>
+</head>
+<body>
+
+    <h2>Calcolo dislivello</h2>
+
+    Partenza (metri): <br>
+    <input type="number" id="partenza"><br><br>
+
+    Arrivo (metri): <br>
+    <input type="number" id="arrivo"><br><br>
+
+    <button onclick="calcola()">Calcola</button>
+
+    <p id="risultato"></p>
+
+    <script>
+        function calcola() {
+            let partenza = document.getElementById("partenza").value;
+            let arrivo = document.getElementById("arrivo").value;
+
+            partenza = Number(partenza);
+            arrivo = Number(arrivo);
+
+            let dislivelloAscesa = arrivo - partenza;
+            let dislivelloDiscesa = dislivelloAscesa;
+            let dislivelloTotale = dislivelloAscesa + dislivelloDiscesa;
+
+            document.getElementById("risultato").innerHTML =
+                "Partenza: " + partenza + " m<br>" +
+                "Arrivo: " + arrivo + " m<br>" +
+                "Dislivello ascesa: " + dislivelloAscesa + " m<br>" +
+                "Dislivello discesa: " + dislivelloDiscesa + " m<br>" +
+                "Dislivello totale: " + dislivelloTotale + " m";
+        }
+    </script>
+
+</body>
+</html>
