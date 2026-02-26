@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 8</title>
+
+  <style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d9e4f5; 
+    text-align: center;
+    padding: 20px;
+}
+
+p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.container{
+      background-color: #ffffff;
+      color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      width: 60%;
+      margin: auto;
+      border: 1px solid #b0c4de;
+}
+
+input{
+     width: 35%;
+     padding: 8px;
+     border-radius: 5px;
+     border: 1px solid #888;
+     margin: 5px;
+}
+
+.button {
+  background-color: #4a6fa5;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #3b5d87;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.frasi{
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+</style>
+</head>
+
+<body>
+
+<p>Generatore di frasi casuali (1parte)</p>
+
+<div class="container">
+
+<input type="text" id="soggetto" placeholder="Inserisci soggetto">
+<input type="text" id="verbo" placeholder="Inserisci verbo"> 
+<button  class="button button2" onclick="aggiungi()">Aggiungi</button>
+
+<h3>Liste inserite</h3>
+
+<ul id="listaSoggetti"></ul>
+<ul id="listaVerbi"></ul> 
+
+<button class="button button2" onclick="Generafrase()">Mescola e genera frasi</button>
+
+<div class="frasi" id="output"></div>
+
+</div>
+
+<script>
+let soggetti=["Belmonte","Prof","La maestra","La bidella","Trump","Il cane","Elon Musk"];
+let verbi=["mangia","costruisce","sbadiglia","disegna","studia","fa il bidet"];
+let complementi=["in Puglia","nel gabinetto della scuola","alle terme","a Sanremo","durante la terza guerra mondiale","imprecando"];
+
+function aggiungi(){
+    let soggetto = document.getElementById("soggetto").value;
+    let verbo = document.getElementById("verbo").value;
+
+    soggetti.push(soggetto); 
+    verbi.push(verbo);
+}
+
+function elementoCasuale(arr){
+    let indice = Math.floor(Math.random() * arr.length);
+    return arr[indice];
+}
+
+function Generafrase(){
+    const soggetto = elementoCasuale(soggetti);
+    const verbo = elementoCasuale(verbi);
+    const complemento = elementoCasuale(complementi);
+
+    const frase = soggetto + " " + verbo + " " + complemento;
+
+    document.getElementById("output").innerHTML += frase + "<br>";
+}
+</script>
+</body>
+</html>
