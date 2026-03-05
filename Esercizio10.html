@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Sito di Informatica - Calcolatore</title>
+    <style>
+    
+        body {
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .contenitore {
+            background-color: white;
+            border: 2px solid blue;
+            border-radius: 10px;
+            width: 350px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 8px;
+            width: 80%;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        #risultato {
+            font-weight: bold;
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenitore">
+        <h2>Calcolatore kWh</h2> 
+        
+        <p>Inserisci i dati qui sotto:</p>
+        
+        <input type="number" id="watt" placeholder="Potenza in Watt (es. 2000)">
+        <input type="number" id="ore" placeholder="Ore d'uso giornaliere">
+        
+        <button onclick="calcolaKwh()">Calcola</button>
+
+        <p id="risultato">Consumo: 0 kWh</p>
+    </div>
+
+    <script>
+        
+        function calcolaKwh() {
+           
+            let w = document.getElementById("watt").value;
+            let h = document.getElementById("ore").value;
+
+            let ris = (w * h) / 1000;
+
+            document.getElementById("risultato").innerHTML = "Consumo: " + ris + " kWh";
+        }
+    </script>
+
+</body>
+</html>
