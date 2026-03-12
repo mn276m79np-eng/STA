@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio: Il Bar Segreto</title>
+    
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block; 
+            border: 2px solid black;
+        }
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        #risultato {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Il Bar Segreto del Buttafuori</h1>
+        <p>Dimostra di poter entrare!</p>
+
+        <label for="eta">Inserisci la tua età:</label><br>
+        <input type="number" id="eta">
+        <br>
+
+        <label for="password">2. Password segreta:</label><br>
+        <input type="password" id="password" >
+        <br>
+
+        <label for="soldi">3. Quanti soldi hai?</label><br>
+        <input type="number" id="soldi" >
+        <br>
+
+        <button onclick="controllaAccesso()">Prova a entrare</button>
+
+        <p id="risultato"></p>
+    </div>
+
+
+    <script>
+     
+        function controllaAccesso() {
+            
+            let eta = document.getElementById('eta').value;
+            let password = document.getElementById('password').value;
+            let soldi = document.getElementById('soldi').value;
+
+         
+            let elementoRisultato = document.getElementById('risultato');
+
+            if (eta < 18) {
+                elementoRisultato.innerHTML = " Accesso negato. Sei troppo giovane!";
+            
+            } else {
+       
+                if (password === "banana") {
+                    
+               
+                    if (soldi >= 10) {
+                        elementoRisultato.innerHTML = " Puoi entrare nel bar segreto!";
+                    } else {
+                        elementoRisultato.innerHTML = " Soldi insufficienti!";
+                    }
+
+                } else {
+                    elementoRisultato.innerHTML = " Password sbagliata!";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
